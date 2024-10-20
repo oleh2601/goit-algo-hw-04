@@ -8,7 +8,7 @@ def main():
     if total == 0 and average == 0:
         print("No Salary Data Found")
     else:
-        print(f"Total salary: ${total}, Average Salary: ${average}")
+        print(f"Total salary: ${total:.2f}, Average Salary: ${average:.2f}")
 
 if __name__ == "__main__":
     main()

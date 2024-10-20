@@ -12,14 +12,14 @@ def load_data(filename: str) -> list[str]:
 
 
 #clearing the data and double checking if it's valid
-def clear_data(salary_data: list[str]) -> list[int]:
+def clear_data(salary_data: list[str]) -> list[float]:
     if not salary_data:
         return []
     output_list = []
     for salary in salary_data:
         try:
             #deleting whitespaces and splitting the line with coma and using only the second part
-            output_list.append((int(salary.strip().split(',')[1]))) 
+            output_list.append((float(salary.strip().split(',')[1]))) 
         except (ValueError, IndexError):
             print(f"Bad data found at line {salary.strip()}")
     return output_list
