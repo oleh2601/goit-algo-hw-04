@@ -36,11 +36,11 @@ def print_dirs(dir_path: pathlib.Path, level=0):
             for item in dir_path.iterdir(): #checking every sub-unit
                 if item.is_dir():
                     #using colorama to color the dirs as cyan
-                    print(f"{indent}{Fore.CYAN}{item}")
+                    print(f"{indent}{Fore.CYAN}{item.relative_to(dir_path)}")
                     print_dirs(item, level+1)
                 elif item.is_file():
                     #using colorama to color the files as green
-                    print(f"{indent}{Fore.GREEN}{item}")
+                    print(f"{indent}{Fore.GREEN}{item.relative_to(dir_path)}")
         except PermissionError:
             #handling PermissionError and paiting those in red
             print(f"{indent}{Fore.RED}[Access Denied: {dir_path}]")
